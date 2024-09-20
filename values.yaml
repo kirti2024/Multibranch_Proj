@@ -17,11 +17,11 @@ Chart.yaml  charts  templates  values.yaml
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: mbranchpurpose
   
   pullPolicy: IfNotPresent
   
-  tag: "stable-alpine3.20-perl"
+  tag: "kirti2024/mbranchpurpose:15"
     
 
 imagePullSecrets: []
