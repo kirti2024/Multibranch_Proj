@@ -1,2 +1,2 @@
-FROM jenkins/jenkins:lts
-EXPOSE 8080
+FROM nginx:stable-alpine3.20-perl
+EXPOSE 80
