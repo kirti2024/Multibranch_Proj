@@ -9,7 +9,7 @@ pipeline{
 			stage('Checkout'){
 				steps{
 					script{
-   checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/kirti2024/Multibranch_Proj.git']])
+   checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url:'https://github.com/kirti2024/Multibranch_Proj/tree/multbranch2']])
 }
 				}
 			}
