@@ -9,16 +9,16 @@ pipeline{
 			stage('Checkout'){
 				steps{
 					script{
-   checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/kirti2024/Jenkins_Assess.git']])
+   checkout scmGit(branches: [[name: '*/milbr1']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/kirti2024/Multibranch_Proj.git']])
 }
 				}
 			}
 			stage('build image'){
 				steps{
 					script{
-						sh 'docker buildx build -t assesimage2:15 .'
+						sh 'docker buildx build -t assesimage22:16 .'
 						
-						sh 'docker tag assesimage2:15 kirti2024/assessmentpurpose:15'
+						sh 'docker tag assesimage22:16 kirti2024/assessmentpurpose:115'
 						
 																
 }
@@ -30,7 +30,7 @@ pipeline{
 				 withCredentials([usernamePassword(credentialsId: "${DOCKER_PASSWORD}", usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                         sh """
                         echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-                        docker push kirti2024/assessmentpurpose:15
+                        docker push kirti2024/assessmentpurpose:115
                         """
             }
 
@@ -44,8 +44,11 @@ pipeline{
 stage('Deploy to K8s'){
               steps{
 		script{ 
-			withKubeConfig(caCertificate: '', clusterName: 'AssessCluster', contextName: '', credentialsId: 'eksclustertoken', namespace: '', restrictKubeConfigAccess: false, serverUrl: 'https://6DB421C38B80BEBC06436AF66D5A35B9.gr7.us-east-1.eks.amazonaws.com') {
-    sh """ kubectl apply -f jenkins.yaml """
+	
+		withKubeConfig(caCertificate: '', clusterName: 'mbranch-cluster', contextName: '', credentialsId: 'eksclustertoken', namespace: '', restrictKubeConfigAccess: false, serverUrl: 'https://DABA616145FB345829A8EA58861FAD41.gr7.us-east-1.eks.amazonaws.com') {
+    			sh """ helm create nginx-chart """
+			
+			//sh """ kubectl apply -f jenkins.yaml """
 }
 
 			}
