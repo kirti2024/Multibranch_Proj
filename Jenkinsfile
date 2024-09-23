@@ -3,6 +3,7 @@ pipeline{
 	agent any
 	environment{
 	DOCKER_PASSWORD="dtoken"
+		KUBECONFIG = credentials('eksclustertoken')
 		
 }
 		stages{
