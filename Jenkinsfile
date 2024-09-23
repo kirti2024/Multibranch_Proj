@@ -44,7 +44,7 @@ pipeline{
 stage('Deploy to K8s'){
               steps{
 		script{ 
-			 sh """ helm upgrade helmrelease """
+			 sh """ helm upgrade helmrelease nginx-helm """
 
 
 			}
