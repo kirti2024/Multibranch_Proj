@@ -46,7 +46,7 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 Selector labels
 */}}
 {{- define "nginx-helm.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "nginx-chart.name" . }}
+app.kubernetes.io/name: {{ include "nginx-helm.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
