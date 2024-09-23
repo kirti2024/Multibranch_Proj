@@ -18,7 +18,7 @@ pipeline{
 					script{
 						sh 'docker buildx build -t mbranchngximage2:15 .'
 						
-						sh 'docker tag mbranchngximage2:15 kirti2024/mbranchngx:17'
+						sh 'docker tag mbranchngximage2:15 kirti2024/mbranchngx:1234'
 						
 																
 }
@@ -30,7 +30,7 @@ pipeline{
 				 withCredentials([usernamePassword(credentialsId: "${DOCKER_PASSWORD}", usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                         sh """
                         echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-                        docker push kirti2024/mbranchngx:17 """
+                        docker push kirti2024/mbranchngx:1234 """
             }
 
  
