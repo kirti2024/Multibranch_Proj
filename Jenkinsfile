@@ -47,6 +47,7 @@ stage('Deploy to K8s'){
 	
 		withKubeConfig(caCertificate: '', clusterName: 'mbranch-cluster', contextName: '', credentialsId: 'eksclustertoken', namespace: '', restrictKubeConfigAccess: false, serverUrl: 'https://DABA616145FB345829A8EA58861FAD41.gr7.us-east-1.eks.amazonaws.com') {
     			sh """ helm create nginx-chart """
+			sh """ helm install helm-rrr ./nginx-chart --set service.type=LoadBalancer image.tag=stable-alpine3.20-perl """
 			
 			//sh """ kubectl apply -f jenkins.yaml """
 }
