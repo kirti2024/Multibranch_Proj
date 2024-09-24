@@ -46,7 +46,7 @@ stage('Deploy to K8s'){
 		script{ 
 			withKubeConfig(caCertificate: '', clusterName: 'mbranch-cluster', contextName: '', credentialsId: 'eksclustertoken', namespace: '', restrictKubeConfigAccess: false, serverUrl: 'https://DABA616145FB345829A8EA58861FAD41.gr7.us-east-1.eks.amazonaws.com') {
     
-			sh """ helm install helmrelease ./nginx-helm """
+			sh """ helm install helmrelease2 ./nginx-helm """
     }
 		
 
