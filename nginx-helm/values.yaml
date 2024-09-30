@@ -2,10 +2,10 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 Name: harnessdeployment
-labels:
-  name: HarnessLabel
+labels: 
+  app: HarnessLabel
 matchLabels:
-  name: selectorLabels
+  app: selectorLabels
 # This will set the replicaset count more information can be found here: https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/
 replicaCount: 2
 
