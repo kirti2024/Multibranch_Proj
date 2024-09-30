@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{ define "nginx-helm.name" -}}
+{{- define "nginx-helm.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
