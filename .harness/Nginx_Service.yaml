@@ -1,0 +1,5 @@
+service:
+  name: Nginx_Service
+  identifier: Nginx_Service
+  orgIdentifier: default
+  projectIdentifier: Proj1
