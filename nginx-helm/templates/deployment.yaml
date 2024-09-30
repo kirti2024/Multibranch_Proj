@@ -3,14 +3,14 @@ kind: Deployment
 metadata:
   name: {{ .Values.Name }}
   labels:
-    {{ .Values.labels.name }}
+    {{ .Values.labels.app }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{ .Values.selector.name }}
+      {{ .Values.selector.app }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
