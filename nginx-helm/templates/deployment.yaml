@@ -6,7 +6,8 @@ metadata:
     {{- include "nginx-helm.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
-  replicas: {{ .Values.replicaCount }}
+  #replicas: {{ .Values.replicaCount }}
+  replicas: 2
   {{- end }}
   selector:
     matchLabels:
