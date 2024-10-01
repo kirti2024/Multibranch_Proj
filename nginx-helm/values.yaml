@@ -101,7 +101,7 @@ autoscaling:
   enabled: true
   minReplicas: 2
   maxReplicas: 3
-  targetCPUUtilizationPercentage: 30
+  targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
 
 # Additional volumes on the output Deployment definition.
